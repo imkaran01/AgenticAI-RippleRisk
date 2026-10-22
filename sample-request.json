@@ -1,0 +1,11 @@
+{
+  "shock_type": "cost-increase",
+  "shock_magnitude_percent": 20,
+  "direction": "increase",
+  "affected_sector": "semiconductor components",
+  "target_industry": "wireless earbuds",
+  "business_context": "Illustrative business scenario for a hackathon demonstration. Compare modeled propagation, not company-specific pricing forecasts.",
+  "duration": "persistent",
+  "horizon_months": 6,
+  "scenario": "base"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "ripplerisk-economic-shock-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A minimal REST API adapter around the RippleRisk HTML economic simulation engine.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

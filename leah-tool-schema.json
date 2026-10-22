@@ -1,0 +1,90 @@
+{
+  "type": "function",
+  "function": {
+    "name": "ripple_risk_economic_shock_analyzer",
+    "description": "Run the RippleRisk illustrative economic shock model for a specified shock and sector, returning modeled sector impacts and scenario comparison. Outputs are not empirically calibrated forecasts.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "shock_type": {
+          "type": "string",
+          "enum": [
+            "price-increase",
+            "cost-increase",
+            "demand-decline",
+            "interest-rate",
+            "tax-change",
+            "supply-disruption",
+            "exchange-rate"
+          ],
+          "description": "Supported shock type."
+        },
+        "shock_magnitude_percent": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 100,
+          "description": "Shock magnitude. For interest-rate shocks, magnitude is modeled in percentage points."
+        },
+        "direction": {
+          "type": "string",
+          "enum": [
+            "increase",
+            "decrease"
+          ],
+          "default": "increase"
+        },
+        "affected_sector": {
+          "type": "string",
+          "description": "Sector at the origin of the shock. Use a sector ID or display name from GET /sectors. Semiconductor components are mapped to Electronics as a proxy."
+        },
+        "target_industry": {
+          "type": "string",
+          "description": "Optional target industry for contextual interpretation; it does not change the model calculation."
+        },
+        "business_context": {
+          "type": "string",
+          "description": "Optional context; does not change model calculation."
+        },
+        "duration": {
+          "type": "string",
+          "enum": [
+            "temporary",
+            "persistent"
+          ],
+          "default": "temporary"
+        },
+        "horizon_months": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "default": 6
+        },
+        "scenario": {
+          "type": "string",
+          "enum": [
+            "optimistic",
+            "base",
+            "adverse",
+            "custom"
+          ],
+          "default": "base"
+        },
+        "elasticity_multiplier": {
+          "type": "number",
+          "minimum": 0,
+          "default": 1
+        },
+        "pass_through_multiplier": {
+          "type": "number",
+          "minimum": 0,
+          "default": 1
+        }
+      },
+      "required": [
+        "shock_type",
+        "shock_magnitude_percent",
+        "affected_sector"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

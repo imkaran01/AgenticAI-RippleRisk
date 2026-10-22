@@ -1,0 +1,12 @@
+LEAH CONFIGURATION NOTES (after deployment)
+
+Endpoint URL: https://YOUR-DEPLOYED-HOST/analyze
+Method: POST
+Content-Type: application/json
+Request body: JSON object matching leah-tool-schema.json parameters
+
+Recommended function schema: paste leah-tool-schema.json into the schema field if Leah expects OpenAI function schema.
+
+If using API Key authentication: configure environment variable RIPPLERISK_API_KEY on the host and set Leah's API Tool to send the matching Bearer token or X-API-Key header. Do not hard-code the secret into source files.
+
+The API is not yet hosted when you download this package. Deploy it first to obtain a real HTTPS URL.
